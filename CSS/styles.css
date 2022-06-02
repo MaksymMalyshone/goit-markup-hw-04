@@ -105,7 +105,7 @@ img {
 
 /* :nth-child(1) */
 
-.header-item {
+.header-item:not(:last-child) {
 	margin-right: 50px;
 }
 
@@ -145,17 +145,24 @@ img {
 }
 
 .header-contacts-link {
+	display: inline-flex;
 	font-weight: 500;
 	line-height: 1.14;
 	letter-spacing: 0.02em;
 	color: var(--secondary-tex-color);
 	padding-top: 32px;
 	padding-bottom: 32px;
+	align-items: center;
 }
 
 .header-contacts-link:hover,
 .header-contacts-link:focus {
 	color: var(--accent-color);
+}
+
+.contacts-icon {
+	margin-right: 10px;
+	fill: currentColor;
 }
 
 /* -----------------HERO------------------------------------- */
@@ -164,7 +171,11 @@ img {
 	text-align: center;
 	padding-top: 200px;
 	padding-bottom: 200px;
+	background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-hero.jpg);
+	max-width: 1600px;
+	margin: 0 auto;
 }
+
 .hero-title {
 	font-weight: 900;
 	font-size: 44px;
@@ -200,7 +211,8 @@ img {
 .hero-btn:focus {
 	background-color: #188ce8;
 }
-/* Benefits */
+
+/* --------------------Benefits */
 
 .benefits {
 	padding-top: 94px;
@@ -224,6 +236,22 @@ img {
 }
 
 .benefits-item:not(:last-child) {
+	margin-right: 30px;
+}
+
+.benefits-svg {
+	background-color: var(--second-fon-color);
+	display: block;
+	height: 120px;
+	padding: 25px;
+	text-align: center;
+}
+
+.benefits-svg:not(:last-child) {
+	margin-bottom: 30px;
+}
+
+.benefits-svg:not(:last-child) {
 	margin-right: 30px;
 }
 
@@ -321,6 +349,7 @@ img {
 }
 
 /* ------------------------FOOTER-----------------------------------------------------------*/
+
 .footer {
 	background-color: var(--nav-fon-color);
 	padding: 60px 0px;
