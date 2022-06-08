@@ -77,9 +77,7 @@ img {
   padding-right: 15px;
   /* outline: 1px solid red; */
 }
-.current {
-  color: var(--accent-color);
-}
+
 /* ---------------HEADER------------------ */
 
 .header {
@@ -155,6 +153,10 @@ img {
   color: var(--accent-color);
 }
 
+.current {
+  color: var(--accent-color);
+}
+
 .contacts-icon {
   margin-right: 10px;
   fill: currentColor;
@@ -169,7 +171,11 @@ img {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/bg-hero.jpg);
   max-width: 1600px;
+  height: 600px;
   margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-title {
@@ -246,10 +252,6 @@ img {
   margin-bottom: 30px;
 }
 
-.benefits-svg:not(:last-child) {
-  margin-right: 30px;
-}
-
 .benefits-title {
   font-weight: 700;
   font-size: 14px;
@@ -265,7 +267,7 @@ img {
 
 /* -------------------GALLERY-------------------------------------------------------- */
 .gallery {
-  padding-top: 94px;
+  padding: top 0;
   padding-bottom: 94px;
 }
 
@@ -353,6 +355,7 @@ img {
   width: 44px;
   height: 44px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .team-soc-item:last-child {
@@ -370,13 +373,18 @@ img {
 }
 
 .team-soc-icon {
-  fill: currentColor;
+  fill: var(--icon-color);
 }
 
 .team-soc-link:hover,
 .team-soc-icon:focus {
   background-color: var(--accent-color);
-  color: var(--first-fon-color);
+}
+
+.team-soc-link:hover .team-soc-icon,
+.team-soc-link:focus .team-soc-icon {
+  fill: var(--first-fon-color);
+  background-color: var(--accent-color);
 }
 
 /* -----------------------CLIENTS */
@@ -392,29 +400,24 @@ img {
   justify-content: center;
 }
 
-.clients-item {
-  border: 1px solid var(--icon-color);
-  border-radius: 4px;
-  width: 170px;
-  height: 92px;
-  padding: 16px 32px;
-}
-
 .clients-item:not(:last-child) {
   margin-right: 30px;
 }
 
 .clients-link {
-  width: 106px;
-  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--icon-color);
+  color: var(--icon-color);
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
 }
 
 .clients-item:hover,
 .clients-item:focus {
-  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
 }
 
 .clients-link:hover .clients-icon,
@@ -423,7 +426,7 @@ img {
 }
 
 .clients-icon {
-  fill: var(--icon-color);
+  fill: currentColor;
 }
 
 /* ------------------------FOOTER-----------------------------------------------------------*/
@@ -485,7 +488,7 @@ img {
 .footer-soc-text {
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.14px;
+  line-height: 1.14;
   text-transform: uppercase;
   color: var(--first-fon-color);
   margin-bottom: 20px;
